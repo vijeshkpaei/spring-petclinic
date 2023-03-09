@@ -2,7 +2,7 @@
 
 pipeline    {
 
-                agent    {
+  agent    {
 
         docker    {    image    'maven:3.5.0'}
 
