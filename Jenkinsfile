@@ -1,33 +1,33 @@
 #!groovy
 
-pipeline {
+pipeline    {
 
- agent {
+                agent    {
 
-  docker { image 'maven:3.5.0'}
+        docker    {    image    'maven:3.5.0'}
 
- } stages {
+    }    stages    {
 
-  stage('maven-build') {
+                stage('maven-build')    {
 
-   steps {
+            steps    {
 
-    sh 'mvn clean install'
+                sh    'mvn    clean    install'
 
-   }
+            }
 
-  }
+        }
 
- }   stage('Docker Build') {
+    }            stage('Docker    Build')    {
 
-   agent any
+            agent    any
 
-   steps {
+            steps    {
 
-    sh 'docker build -t demo/spring-petclinic:latest .'
+                sh    'docker    build    -t    demo/spring-petclinic:latest    .'
 
-   }
+            }
 
-  }
+        }
 
- }
+    }
